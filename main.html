@@ -1,177 +1,242 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Event Examples</title>
+    <title>ToMaTo-EN</title>
     <link
       rel="stylesheet"
       type="text/css"
       href="main.css" />
-      <script type="module" src="script.js" ></script>
+    <script
+      type="module"
+      src="script.js"></script>
 
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/cloudinary-core/2.13.0/cloudinary-core-shrinkwrap.js"></script>
-     
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cloudinary-core/2.13.0/cloudinary-core-shrinkwrap.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons" />
   </head>
 
   <body>
-    
-    <div class="title">
-      INSTRUCTIONS:
-    </div>
-    <div class="instructions-cont">
-      <div class="instruction-block">
-        <div class="instruction">
-          <div class="text-header">
-            1. Capture a Clear Image of Your
-            Tongue:
-          </div>
-          <ul>
-            <li>
-              Ensure the image includes the entire
-              tongue, covering it from tip to toe
-            </li>
-            <li>
-              Avoid blurriness by taking the
-              picture under clear and well-lit
-              conditions
-            </li>
-            <li>
-              Relax your tongue during the capture
-              to achieve optimal results
-            </li>
-            <li>
-              Save the image in either JPEG or PNG
-              format
-            </li>
-          </ul>
-        </div>
-        <div class="instruction">
-          <div class="text-header">
-            2. Upload/Insert Your Tongue Image:
-          </div>
-
-          <ul>
-            <li>
-              Locate the 'Input Image' container
-              below
-            </li>
-            <li>
-              Upload or input the previously
-              captured tongue image
-            </li>
-          </ul>
-        </div>
+    <div class="wrapper">
+      <div class="sidebar">
+        <h2>ToMaTo-EN</h2>
+        <ul>
+          <li>
+            <a href="main.html"
+              ><i class="material-icons">home</i
+              >Home</a
+            >
+          </li>
+          <li>
+            <a href="HowToUse.html"
+              ><i class="material-icons"
+                >ads_click</i
+              >How To Use</a
+            >
+          </li>
+          <li>
+            <a href="#"
+              ><i class="material-icons">help</i
+              >About Us</a
+            >
+          </li>
+          <li>
+            <a href="#"
+              ><i class="material-icons"
+                >auto_stories</i
+              >Additional Resources</a
+            >
+          </li>
+          <!-- ... rest of your HTML content ... -->
+        </ul>
       </div>
-      <div class="instruction-block">
-        <div class="instruction">
-          <div class="text-header">
-            3. Generate Visualization:
-          </div>
-          <ul>
-            <li>
-              Click the 'Generate' button to
-              process the uploaded image
-            </li>
-          </ul>
-        </div>
-        <div class="instruction">
-          <div class="text-header">
-            4. Interpret the Image Heatmap:
-          </div>
+      <div class="main_content">
+        <div class="title">INSTRUCTIONS:</div>
+        <div class="instructions-cont">
+          <div class="instruction-block">
+            <div class="instruction">
+              <div class="text-header">
+                1. Capture a Clear Image of Your
+                Tongue:
+              </div>
+              <ul>
+                <li>
+                  Ensure the image includes the
+                  entire tongue, covering it from
+                  tip to toe
+                </li>
+                <li>
+                  Avoid blurriness by taking the
+                  picture under clear and well-lit
+                  conditions
+                </li>
+                <li>
+                  Relax your tongue during the
+                  capture to achieve optimal
+                  results
+                </li>
+                <li>
+                  Save the image in either JPEG or
+                  PNG format
+                </li>
+              </ul>
+            </div>
+            <div class="instruction">
+              <div class="text-header">
+                2. Upload/Insert Your Tongue
+                Image:
+              </div>
 
-          <ul>
-            <li>
-              The generated image in the 'Image
-              Heatmap' container displays
-              indicative regions for tooth marked
-              tongue.
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="title">
-      ToMaTo-EN
-    </div>
-    <div class="main-cont">
-      <div class="main-block">
-        <div class="images">
-          <div class="input-image">
-            <div class="image-name">
-              Input Image
+              <ul>
+                <li>
+                  Locate the 'Input Image'
+                  container below
+                </li>
+                <li>
+                  Upload or input the previously
+                  captured tongue image
+                </li>
+              </ul>
             </div>
-
-            <label for="imageInput" class="custom-button">
-              <img id="previewImage" src="upload.png" alt="Uploaded Image">
-          </label>
-          <input type="file" id="imageInput" accept="image/*" style="display: none;">
-
-        </div>
-          <div class="output-image">
-            <div class="image-name">
-              Image Heatmap
+          </div>
+          <div class="instruction-block">
+            <div class="instruction">
+              <div class="text-header">
+                3. Generate Visualization:
+              </div>
+              <ul>
+                <li>
+                  Click the 'Generate' button to
+                  process the uploaded image
+                </li>
+              </ul>
             </div>
-            <img src="rename.png" id="outputImage"/>
+            <div class="instruction">
+              <div class="text-header">
+                4. Interpret the Image Heatmap:
+              </div>
+
+              <ul>
+                <li>
+                  The generated image in the
+                  'Image Heatmap' container
+                  displays indicative regions for
+                  tooth marked tongue.
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="blocks">
-        <div class="info-cont">
-          <div class="info-blocks">
-            <div class="classification">
-              <div class="text-header">Classification</div>
-              <input
-                type="text"
-                id="classification_in"
-                name="classification_in"
-                readonly="True" />
-            </div>
-            <div class="confidence">
-              <div class="text-header">Confidence</div>
-              <input
-                type="text"
-                id="confidence_in"
-                name="confidence_in"
-                readonly="True" />
-            </div>
-            <div class="segment">
-              <div class="segment-text">Does the image contains parts other than tongue?</div>
-              <div class="seg-cb">
-              <input
-                type="checkbox"
-                id="segment_in"
-                name="segment_in"
-                checked/>
-                <label for="segment_in">Segment</label>
+        <div class="title">ToMaTo-EN</div>
+        <div class="main-cont">
+          <div class="main-block">
+            <div class="images">
+              <div class="input-image">
+                <div class="image-name">
+                  Input Image
+                </div>
+
+                <label
+                  for="imageInput"
+                  class="custom-button">
+                  <img
+                    id="previewImage"
+                    src="upload.png"
+                    alt="Uploaded Image" />
+                </label>
+                <input
+                  type="file"
+                  id="imageInput"
+                  accept="image/*"
+                  style="display: none" />
+              </div>
+              <div class="output-image">
+                <div class="image-name">
+                  Image Heatmap
+                </div>
+                <img
+                  src="rename.png"
+                  id="outputImage" />
               </div>
             </div>
-            
           </div>
-          
-          <div class="buttons">
-            <button id="generate-button">
-              Generate
-            </button>
-            <button id="clear-button">Clear</button>
-          </div>
-          
-        </div>
-        
-        <div class="legend">
-          <div class="legend-cont">
-            <div class="text-header">Legend</div>
-            <div class="content">
-              It utilizes the “jet” colormap as indicated below, 
-              where the blue indicates the least factor that affects 
-              the prediction of the model while red highlights what 
-              contributed the most.
+          <div class="blocks">
+            <div class="info">
+              <div class="info-cont">
+                <div class="info-blocks">
+                  <div class="classification">
+                    <div class="text-header">
+                      Classification
+                    </div>
+                    <input
+                      type="text"
+                      id="classification_in"
+                      name="classification_in"
+                      readonly="True" />
+                  </div>
+                  <div class="confidence">
+                    <div class="text-header">
+                      Confidence
+                    </div>
+                    <input
+                      type="text"
+                      id="confidence_in"
+                      name="confidence_in"
+                      readonly="True" />
+                  </div>
+                  <div class="segment">
+                    <div class="segment-text">
+                      Does the image contains
+                      parts other than tongue?
+                    </div>
+                    <div class="seg-cb">
+                      <input
+                        type="checkbox"
+                        id="segment_in"
+                        name="segment_in"
+                        checked />
+                      <label for="segment_in"
+                        >Segment</label
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="buttons">
+                <button id="generate-button">
+                  Generate
+                </button>
+                <button id="clear-button">
+                  Clear
+                </button>
+              </div>
             </div>
-            <div class="legend-img-div">
-            <img src="legend.png" alt="legend.png" class="legend-img">
-          </div>
+
+            <div class="legend">
+              <div class="legend-cont">
+                <div class="text-header">
+                  Legend
+                </div>
+                <div class="content">
+                  It utilizes the “jet” colormap
+                  as indicated below, where the
+                  blue indicates the least factor
+                  that affects the prediction of
+                  the model while red highlights
+                  what contributed the most.
+                </div>
+                <div class="legend-img-div">
+                  <img
+                    src="legend.png"
+                    alt="legend.png"
+                    class="legend-img" />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-
   </body>
 </html>
