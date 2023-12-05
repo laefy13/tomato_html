@@ -6,10 +6,9 @@
       rel="stylesheet"
       type="text/css"
       href="main.css" />
-      <script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/4.7.1/gradio.js" defer></script>
-      <script type="module" src="https://cdn.jsdelivr.net/npm/@gradio/client@0.8.2/dist/index.min.js"></script>
-      <script type="module" src="sample.js" defer></script>
+      <script type="module" src="script.js" ></script>
 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/cloudinary-core/2.13.0/cloudinary-core-shrinkwrap.js"></script>
       <!-- Include Gradio library -->
   </head>
 
@@ -17,13 +16,14 @@
     <!-- <script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/4.7.1/gradio.js"></script>
 
     <gradio-app src="https://laefy-tomato.hf.space"></gradio-app> -->
+    
+    <div class="title">
+      INSTRUCTIONS:
+    </div>
     <div class="instructions-cont">
-      <div class="instructions-title">
-        INSTRUCTIONS:
-      </div>
       <div class="instruction-block">
         <div class="instruction">
-          <div class="inst-header">
+          <div class="text-header">
             1. Capture a Clear Image of Your
             Tongue:
           </div>
@@ -48,7 +48,7 @@
           </ul>
         </div>
         <div class="instruction">
-          <div class="inst-header">
+          <div class="text-header">
             2. Upload/Insert Your Tongue Image:
           </div>
 
@@ -66,7 +66,7 @@
       </div>
       <div class="instruction-block">
         <div class="instruction">
-          <div class="inst-header">
+          <div class="text-header">
             3. Generate Visualization:
           </div>
           <ul>
@@ -77,7 +77,7 @@
           </ul>
         </div>
         <div class="instruction">
-          <div class="inst-header">
+          <div class="text-header">
             4. Interpret the Image Heatmap:
           </div>
 
@@ -92,6 +92,9 @@
         </div>
       </div>
     </div>
+    <div class="title">
+      ToMaTo-EN
+    </div>
     <div class="main-cont">
       <div class="main-block">
         <div class="images">
@@ -99,50 +102,78 @@
             <div class="image-name">
               Input Image
             </div>
-            <img src="k.jpg" />
-            
-            <input type="file" id="imageInput" accept="image/*">
-          </div>
+            <!-- <img src="k.jpg" /> -->
+
+            <label for="imageInput" class="custom-button">
+              <img id="previewImage" src="upload.png" alt="Uploaded Image">
+          </label>
+          <input type="file" id="imageInput" accept="image/*" style="display: none;">
+
+        </div>
           <div class="output-image">
             <div class="image-name">
               Image Heatmap
             </div>
-            <img src="k.jpg" />
+            <img src="rename.png" id="outputImage"/>
           </div>
         </div>
       </div>
       <div class="blocks">
         <div class="info-cont">
-          <div class="classification">
-            <input
-              type="text"
-              id="classification_in"
-              name="classification_in"
-              readonly="True" />
+          <div class="info-blocks">
+            <div class="classification">
+              <div class="text-header">Classification</div>
+              <input
+                type="text"
+                id="classification_in"
+                name="classification_in"
+                readonly="True" />
+            </div>
+            <div class="confidence">
+              <div class="text-header">Confidence</div>
+              <input
+                type="text"
+                id="confidence_in"
+                name="confidence_in"
+                readonly="True" />
+            </div>
+            <div class="segment">
+              <div class="segment-text">Does the image contains parts other than tongue?</div>
+              <div class="seg-cb">
+              <input
+                type="checkbox"
+                id="segment_in"
+                name="segment_in"/>
+                <label for="segment_in">Segment</label>
+              </div>
+            </div>
+            
           </div>
-          <div class="confidence">
-            <input
-              type="text"
-              id="confidence_in"
-              name="confidence_in"
-              readonly="True" />
+          
+          <div class="buttons">
+            <button id="generate-button">
+              Generate
+            </button>
+            <button id="clear-button">Clear</button>
           </div>
-          <div class="segment">
-            <div class="segment-text">Does the image contains parts other than tongue?</div>
-            <input
-              type="checkbox"
-              id="segment_in"
-              name="segment_in"> Segment </input>
+          
+        </div>
+        
+        <div class="legend">
+          <div class="legend-cont">
+            <div class="text-header">Legend</div>
+            <div class="content">
+              It utilizes the “jet” colormap as indicated below, 
+              where the blue indicates the least factor that affects 
+              the prediction of the model while red highlights what 
+              contributed the most.
+            </div>
+            <div class="legend-img-div">
+            <img src="legend.png" alt="legend.png" class="legend-img">
+          </div>
           </div>
         </div>
-        <div class="legend"></div>
       </div>
-    </div>
-    <div class="buttons">
-      <button id="generate-button">
-        Generate
-      </button>
-      <button id="clear-button">Clear</button>
     </div>
 
   </body>

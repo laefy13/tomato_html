@@ -1,5 +1,5 @@
 {
-  "devDependencies": {
+  "dependencies": {
     "@gradio/client": "^0.8.2"
   }
 }
