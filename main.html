@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Event Examples</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="main.css" />
+      <script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/4.7.1/gradio.js" defer></script>
+      <script type="module" src="https://cdn.jsdelivr.net/npm/@gradio/client@0.8.2/dist/index.min.js"></script>
+      <script type="module" src="sample.js" defer></script>
+
+      <!-- Include Gradio library -->
+  </head>
+
+  <body>
+    <!-- <script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/4.7.1/gradio.js"></script>
+
+    <gradio-app src="https://laefy-tomato.hf.space"></gradio-app> -->
+    <div class="instructions-cont">
+      <div class="instructions-title">
+        INSTRUCTIONS:
+      </div>
+      <div class="instruction-block">
+        <div class="instruction">
+          <div class="inst-header">
+            1. Capture a Clear Image of Your
+            Tongue:
+          </div>
+          <ul>
+            <li>
+              Ensure the image includes the entire
+              tongue, covering it from tip to toe
+            </li>
+            <li>
+              Avoid blurriness by taking the
+              picture under clear and well-lit
+              conditions
+            </li>
+            <li>
+              Relax your tongue during the capture
+              to achieve optimal results
+            </li>
+            <li>
+              Save the image in either JPEG or PNG
+              format
+            </li>
+          </ul>
+        </div>
+        <div class="instruction">
+          <div class="inst-header">
+            2. Upload/Insert Your Tongue Image:
+          </div>
+
+          <ul>
+            <li>
+              Locate the 'Input Image' container
+              below
+            </li>
+            <li>
+              Upload or input the previously
+              captured tongue image
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="instruction-block">
+        <div class="instruction">
+          <div class="inst-header">
+            3. Generate Visualization:
+          </div>
+          <ul>
+            <li>
+              Click the 'Generate' button to
+              process the uploaded image
+            </li>
+          </ul>
+        </div>
+        <div class="instruction">
+          <div class="inst-header">
+            4. Interpret the Image Heatmap:
+          </div>
+
+          <ul>
+            <li>
+              The generated image in the 'Image
+              Heatmap' container displays
+              indicative regions for tooth marked
+              tongue.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="main-cont">
+      <div class="main-block">
+        <div class="images">
+          <div class="input-image">
+            <div class="image-name">
+              Input Image
+            </div>
+            <img src="k.jpg" />
+            
+            <input type="file" id="imageInput" accept="image/*">
+          </div>
+          <div class="output-image">
+            <div class="image-name">
+              Image Heatmap
+            </div>
+            <img src="k.jpg" />
+          </div>
+        </div>
+      </div>
+      <div class="blocks">
+        <div class="info-cont">
+          <div class="classification">
+            <input
+              type="text"
+              id="classification_in"
+              name="classification_in"
+              readonly="True" />
+          </div>
+          <div class="confidence">
+            <input
+              type="text"
+              id="confidence_in"
+              name="confidence_in"
+              readonly="True" />
+          </div>
+          <div class="segment">
+            <div class="segment-text">Does the image contains parts other than tongue?</div>
+            <input
+              type="checkbox"
+              id="segment_in"
+              name="segment_in"> Segment </input>
+          </div>
+        </div>
+        <div class="legend"></div>
+      </div>
+    </div>
+    <div class="buttons">
+      <button id="generate-button">
+        Generate
+      </button>
+      <button id="clear-button">Clear</button>
+    </div>
+
+  </body>
+</html>
