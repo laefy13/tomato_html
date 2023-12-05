@@ -98,10 +98,31 @@ async function predict() {
   // previewImage.src = result.data[3].url
   outputImage.src = result.data[2].url;
 }
+function clearPage() {
+  const confidence = document.getElementById(
+    "confidence_in"
+  );
+  const classification = document.getElementById(
+    "classification_in"
+  );
+  const previewImage = document.getElementById(
+    "previewImage"
+  );
+  const outputImage = document.getElementById(
+    "outputImage"
+  );
 
+  confidence.value = "";
+  classification.value = "";
+  outputImage.src = "rename.png";
+  previewImage.src = "upload.png";
+}
 document
   .getElementById("generate-button")
   .addEventListener("click", predict);
+document
+  .getElementById("clear-button")
+  .addEventListener("click", clearPage);
 
 document.addEventListener(
   "DOMContentLoaded",

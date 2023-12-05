@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Additional Resources</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        list-style: none;
+        text-decoration: none;
+        font-family: "Source Sans Pro", sans-serif;
+      }
+
+      body {
+        background-color: #3b3b3b;
+        z-index: 1;
+      }
+
+      .wrapper {
+        display: flex;
+        position: relative;
+      }
+
+      .wrapper .sidebar {
+        width: 260px;
+        height: 1040px;
+        background: #d7d7d7;
+        margin-left: 48px;
+        margin-top: 40px;
+        padding: 32px 0px;
+        font-size: 16px;
+        border-radius: 16px;
+        position: fixed;
+      }
+
+      .wrapper .sidebar h2 {
+        color: #212121;
+        text-align: left;
+        margin-left: 24px;
+        font-size: 22px;
+        margin-bottom: 16px;
+      }
+
+      .wrapper .sidebar ul li {
+        padding: 0;
+      }
+
+      .wrapper .sidebar ul li a {
+        display: block;
+        margin-bottom: 0; /* 0 */
+        padding: 8px;
+        color: #212121;
+      }
+
+      .wrapper .sidebar ul li:nth-child(4) a {
+        display: block;
+        margin-bottom: 0px; /* 0 */
+        background-color: #ffffff;
+        padding: 8px;
+        color: #7b4a4c;
+      }
+
+      .wrapper .sidebar ul li a .material-icons {
+        width: 32px;
+        margin-left: 24px;
+      }
+
+      .wrapper .main_content {
+        margin-top: 40px;
+        margin-left: 350px;
+        margin-right: 48px;
+        z-index: 2;
+      }
+
+      .main_content .one {
+        max-width: 100%; /* Ensures the image doesn't exceed its container's width */
+        height: 265px;
+        margin-top: 132px;
+        margin-left: 72px; /* Example margin for centering the image */
+        z-index: 5;
+        border-radius: 8px;
+        position: fixed;
+      }
+
+      .main_content .two {
+        max-width: 100%; /* Ensures the image doesn't exceed its container's width */
+        height: 265px;
+        margin-top: 132px;
+        margin-left: 364px; /* Example margin for centering the image */
+        z-index: 5;
+        border-radius: 8px;
+        position: fixed;
+      }
+
+      .main_content .three {
+        max-width: 100%; /* Ensures the image doesn't exceed its container's width */
+        height: 265px;
+        margin-top: 132px;
+        margin-left: 656px; /* Example margin for centering the image */
+        z-index: 5;
+        border-radius: 8px;
+        position: fixed;
+      }
+
+      .wrapper .main_content .header {
+        padding: 32px;
+        height: 1440px;
+        width: 1140px;
+        background: #d7d7d7;
+        border-radius: 16px;
+        text-transform: uppercase;
+        font-weight: bold;
+        position: fixed;
+        z-index: 2;
+      }
+
+      .main_content img {
+        cursor: pointer;
+        transition: transform 0.2s, filter 0.2s,
+          box-shadow 0.2s;
+      }
+
+      .main_content img:hover {
+        transform: scale(1.1);
+        filter: brightness(1.2);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      }
+
+      .popup {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 1000;
+        cursor: pointer;
+      }
+
+      .popup-content {
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        text-align: left;
+        max-width: 60%;
+        overflow-y: auto;
+        max-height: 80%;
+      }
+
+      .popup-content img {
+        max-width: 100%;
+        justify-content: center;
+        height: auto;
+        margin-bottom: 16px;
+        border-radius: 8px;
+      }
+
+      .popup-content h2 {
+        color: #333;
+        font-size: 1.5em;
+        margin-bottom: 10px;
+        text-align: center;
+      }
+
+      .popup-content p {
+        line-height: 1.5;
+        color: #333;
+        text-align: left;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="sidebar">
+        <h2>ToMaTo-EN</h2>
+        <ul>
+          <li>
+            <a href="main.html"
+              ><i class="material-icons">home</i
+              >Home</a
+            >
+          </li>
+          <li>
+            <a href="HowToUse.html"
+              ><i class="material-icons"
+                >ads_click</i
+              >How To Use</a
+            >
+          </li>
+          <li>
+            <a href="AboutUs.html"
+              ><i class="material-icons">help</i
+              >About Us</a
+            >
+          </li>
+          <li>
+            <a href="AdditionalResources.html"
+              ><i class="material-icons"
+                >auto_stories</i
+              >Additional Resources</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div class="main_content">
+        <div class="header">
+          <h3>
+            Read these to learn more about the
+            project:
+          </h3>
+        </div>
+        <img
+          class="one"
+          src="one.png"
+          alt="What is Tooth-Marked Tongue"
+          onclick="showPopupWithContent('Tooth-Marked Tongue: An Overview', '<p><br>A tooth-marked tongue refers to a tongue surface that bears impressions or markings similar to the edges of teeth. These marks are visible on the sides of the tongue.</p><p><br><h3><strong>Implications:</h3></strong></p><p><br><strong>Digestive Issues - </strong>Tooth marks may suggest potential digestive concerns, indicating that the body might be struggling to absorb nutrients from food.</p><p><strong><br>Spleen and Stomach Health - </strong>In Traditional Chinese Medicine (TCM), tooth-marks are often associated with the Spleen and Stomach health, which play crucial roles in digestion.</p><p><br><h3><strong>Possible Causes:</h3></strong></p><p><strong><br>Poor Digestive Function - </strong>Inefficient digestion can lead to the formation of tooth marks on the tongue.</p><br><p><strong>Nutrient Absorption Issues - </strong>Difficulty in absorbing nutrients from food can contribute to this condition.</p><p><br><h3><strong>Actions to Take:</h3></strong></p><p><br><strong>Dietary Changes - </strong>Consider incorporating easily digestible foods and Avoid excessive intake of heavy or greasy meals.</p><p><br><strong>Hydration - </strong>Ensure adequate water intake to support digestion.</p><p><br><strong>Consult a Healthcare Professional - </strong>If tooth marks persist or are accompanied by other symptoms, consult with a healthcare professional. Seek guidance from a TCM practitioner for a holistic approach. Remember, the appearance of tooth marks on the tongue can be indicative of various factors, and it\'s essential to address the underlying causes for comprehensive well-being. Always consult with a healthcare professional for personalized advice and diagnosis.</p>')" />
+        <img
+          class="two"
+          src="three.png"
+          alt="Did You Know?"
+          onclick="showPopupWithImage('dyk.png', 'Five (5) Phases in TCM<br><br>', 'In Traditional Chinese Medicine (TCM), the Five Phases have specific roles and connections. <br><br><b>1. Heart Phase:</b><br>   - It\'s linked to the Liver.<br>   - It controls blood vessels and influences the tongue.<br>   - Its well-being shows on the face.<br><br><b>2. Spleen Phase:</b><br>   - It comes from the Heart.<br> - It manages muscles and has an effect on the mouth.<br>   - Its prosperity is reflected in the lips.<br><br><b>3. Lung Phase:</b><br>   - It originates from the Spleen.<br>  - It oversees skin, hair, and is connected to the nose.<br>  - Its prosperity shows in body hair.<br><br><b>4. Kidney Phase:</b><br>   - It\'s generated in the Lungs.<br>   - It governs bones, influences ears, and affects hair appearance.<br><br><b>5. Liver Phase:</b><br>   - It comes from the Kidneys.<br>   - It manages tendons, enlightens the eyes, and affects fingers, toes, and nails. <br><br>Moreover:<br><br>   - Heart connects with the small intestine.<br>   - Spleen connects with the stomach.<br>   - Lung connects with the large intestine.<br>   - Kidney connects with the bladder.<br>  - Liver connects with the gallbladder.<br><br>The arrows on the outer circle show a <i>mother-son</i> relationship, and the arrows diagonally indicate a <i>master-servant</i> relationship.</p>')" />
+        <img
+          class="three"
+          src="two.png"
+          alt="Tongue Trivia"
+          onclick="showPopupWithContent('','<strong>Tongue: The Rebel Muscle</strong> - Your tongue is the lone rebel in the skin-covered body crew! It\'s the only part that proudly goes skin-free.<br><br><strong>Tongue\'s Color Palette</strong> - A healthy tongue comes in various shades of pink. If it\'s too red, pale, or white, it might be signaling something\'s up with your health.<br><br><strong>Ancient Clues</strong> - Traditional Chinese Medicine (TCM) has been studying tongues for centuries. Tooth marks are seen as clues to understand digestive health, providing ancient insights into overall well-being.<br><br><strong>Tongue Chronicles: Unveiling Internal Blockbusters!</strong> - Surprisingly, this muscle isn\'t selfish! It acts as a mirror, reflecting the drama unfolding in other muscles and internal organs. It\'s like a backstage pass to the body\'s blockbuster show!<br><br><strong>Nature\'s Braille</strong> - Your tongue\'s tooth marks are like nature\'s Braille – a unique code that could reveal a story about your body\'s digestive adventures.<br><br><strong>Tongue Workout</strong> - The tongue is a powerhouse! It\'s made up of eight interwoven muscles. Speaking, eating, and even beatboxing are all thanks to your tongue\'s workout routine.', )" />
+      </div>
+    </div>
+
+    <script>
+      function showPopupWithContent(
+        title,
+        content
+      ) {
+        var popup = document.createElement("div");
+        popup.className = "popup";
+        popup.innerHTML =
+          '<div class="popup-content"><h2>' +
+          title +
+          "</h2>" +
+          content +
+          "</div>";
+
+        document.body.appendChild(popup);
+
+        popup.addEventListener(
+          "click",
+          function () {
+            document.body.removeChild(popup);
+          }
+        );
+      }
+
+      function showPopupWithImage(
+        imageSrc,
+        title,
+        content
+      ) {
+        var popup = document.createElement("div");
+        popup.className = "popup";
+        popup.innerHTML =
+          '<div class="popup-content"><h2>' +
+          title +
+          '</h2><img src="' +
+          imageSrc +
+          '" alt="Popup Image"><p>' +
+          content +
+          "</p></div>";
+
+        document.body.appendChild(popup);
+
+        popup.addEventListener(
+          "click",
+          function () {
+            document.body.removeChild(popup);
+          }
+        );
+      }
+    </script>
+  </body>
+</html>
