@@ -1,5 +1,5 @@
 import { client } from "https://cdn.jsdelivr.net/npm/@gradio/client@0.8.2/dist/index.min.js";
-// Function to handle predictions
+
 
 
 function uploadImage(image_) {
@@ -12,7 +12,7 @@ function uploadImage(image_) {
 
     let imageUrl; 
 
-    fetch('https://api.imgbb.com/1/upload?expiration=60&key=7cbbdced6035920192277675516a2f49', {
+    fetch('https://api.imgbb.com/1/upload?expiration=30&key=7cbbdced6035920192277675516a2f49', {
         method: 'POST',
         body: formData,
     })
@@ -43,7 +43,7 @@ async function predict() {
   }
 
   const app = await client(
-    "http://127.0.0.1:7860/"
+    "https://laefy-tomato.hf.space/--replicas/9bw79/"
   );
 
   const result = await app.predict("/main_1", [
@@ -51,16 +51,16 @@ async function predict() {
     segmentCheckbox.checked, 
     true, 
   ]);
-  
+  console.log(result)
   const confidence = document.getElementById('confidence_in');
   const classification = document.getElementById('classification_in');
-  const previewImage = document.getElementById('previewImage');
+  // const previewImage = document.getElementById('previewImage');
   const outputImage = document.getElementById('outputImage');
   console.log(result.data);
   console.log(result.data[2].url);
   classification.value = result.data[0]
   confidence.value = result.data[1]
-  previewImage.src = result.data[3].url
+  // previewImage.src = result.data[3].url
   outputImage.src = result.data[2].url
 }
 
@@ -85,7 +85,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
           reader.readAsDataURL(file);
       } else {
-          // If no file is selected, reset the image to the default
           previewImage.src = 'upload.png';
       }
   });

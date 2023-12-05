@@ -105,6 +105,12 @@ img {
 .info-blocks{
   margin:24px;
 }
+#classification_in{
+  width:300px;
+}
+#confidence_in{
+  width:300px;
+}
 .legend {
   display: flex;
   justify-content: center;
